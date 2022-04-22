@@ -1,0 +1,36 @@
+<!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+    <h3 class="title-5 m-b-35 card-header">Roles</h3>
+    <div class="table-data__tool">
+
+
+    </div>
+    <div class="table-responsive table-responsive-data2">
+        <table class="table table-data2">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Role name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow" *ngFor="let u of roles, let i = index">
+
+                    <td>{{i+1}}</td>
+                    <td>
+                        {{u.roleName}}
+                    </td>
+
+
+                    <td>
+                        <button type="button" class="btn btn-primary"(click)="updaterole(u._id)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>

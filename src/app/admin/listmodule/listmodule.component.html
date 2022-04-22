@@ -1,0 +1,63 @@
+<!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+    <h3 class="title-5 m-b-35 card-header">Module</h3>
+    <div class="table-data__tool">
+
+
+    </div>
+    <div class="table-responsive table-responsive-data2 ">
+        <table class="table table-data2 size ">
+            <thead>
+                <tr>
+
+                    <th>Project Name</th>
+                    <th [width]="150">Module Name</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th [width]="100">Estimated hour</th>
+                    <th>Start Date</th>
+                    <th>Status</th>
+                    <th style="width: 250px;">Action</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow" *ngFor="let list of listModule">
+
+
+                    <td>
+                        {{list.projectId.projectName}}
+                    </td>
+                    <td>
+                        {{list.moduleName}}
+                    </td>
+                    <td>
+                        {{list.description}}
+                    </td>
+                    <td>
+                        {{list.priorityId.priorityName}}
+                    </td>
+                    <td>
+                        {{list.estimatedHour}}
+                    </td>
+                    <td>
+                        {{list.startDate}}
+                    </td>
+                    <td>
+                        {{list.statusId.statusName}}
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="updatemodule(list._id)">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="deletemodule(list._id)">Delete</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>

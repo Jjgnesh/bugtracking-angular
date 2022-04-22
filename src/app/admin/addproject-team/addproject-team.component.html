@@ -1,0 +1,70 @@
+<div class="card-header">Add Project Team</div>
+<div class="card-body card-block">
+
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project</label>
+        </div>
+        <div class="col-12 col-md-9">
+          
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="projectId" >
+                <option value="0" *ngFor="let p  of project" value="{{p._id}}" > {{p.projectName}}</option>
+                
+              
+            </select> 
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project Manager</label>
+        </div>
+        <div class="col-12 col-md-9">
+          
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="projectManager" multiple >
+                <option value="0" *ngFor="let  m of managers" value="{{m._id}}" > {{m.userName}}</option>
+                
+              
+            </select> 
+        </div>
+    </div>
+    
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Tester</label>
+        </div>
+        <div class="col-12 col-md-9">
+          
+
+            <select name="select" id="select" class="form-control"  [(ngModel)]="tester"multiple>
+                <option value="0" *ngFor="let  t of testers" value="{{t._id}}" > {{t.userName}}</option>
+                
+              
+            </select> 
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Developer</label>
+        </div>
+        <div class="col-12 col-md-9">
+          
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="developer" multiple>
+                <option value="0" *ngFor="let d  of developers" value="{{d._id}}" > {{d.userName}}</option>
+                
+              
+            </select> 
+        </div>
+    </div>
+
+
+    <div class="form-actions form-group">
+        <button type="submit" class="btn btn-success btn-sm" (click)="addProjectTeam()">Submit</button>
+    </div>
+
+</div>
+<br>
+

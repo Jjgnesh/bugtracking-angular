@@ -1,0 +1,46 @@
+                    <!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+    <h3 class="title-5 m-b-35 card-header">Users</h3>
+    <div class="table-data__tool">
+
+
+    </div>
+    <div class="table-responsive table-responsive-data2">
+        <table class="table table-data2">
+            <thead>
+                <tr >
+                    <th style="width: 10px;">Index</th> 
+                    <th style="width: 200px;">USER List</th>
+                    <th style="width: 200px;">Email</th>
+                    <th style="width: 100px;">Gender</th>
+                    <th style="width: 150px;">Role</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow"  *ngFor="let u of users,let i = index">
+
+                    <td>{{i+1}}</td>
+                    <td>{{u.userName}}</td>
+                    
+                    <td>{{u.email}}</td>
+                   <td>{{u.Gender}}</td>
+                    <td>{{u.role.roleName}}</td> 
+                    <td>{{u.status}}</td>
+
+                    <td>
+                      
+                        
+                        <button type="button" class="btn btn-danger" (click)="deleteUser(u._id)">Delete</button> 
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>

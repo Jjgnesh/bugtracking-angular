@@ -1,0 +1,71 @@
+<div class="card-header">
+    <strong>project Team List</strong>
+</div>
+<div class="card-body card-block">
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project </label>
+            
+        </div>
+        <div class="col-12 col-md-9">
+
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="projectId"
+                (change)="getProjectTeambyID()">
+                <option value="0" *ngFor="let p of project" value="{{p._id}}">{{p.projectName}}</option>
+
+
+            </select>
+        </div>
+    </div>
+    
+</div>   
+<!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+    <h3 class="title-5 m-b-35 card-header">Projects</h3>
+    <div class="table-data__tool">
+
+        <button type="button" class="btn btn-primary"  (click)="addProjectMember()">Add Member</button>
+    </div>
+     <div class="table-responsive table-responsive-data2 ">
+        <table class="table table-data2 size ">
+            <thead>
+                <tr>
+                    
+                    <th >Sr</th>
+                    <th >Project Team Member</th>
+                    <th >Role</th>
+                    <th >Project Team Status</th>
+                    <th style="width: 300px;">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow" *ngFor="let list of projectTeam,let i=index" >
+
+                    <td >
+                        {{i+1}}
+                    </td>
+                    <td>
+                       {{list.projectTeamMember?.userName}}                       
+                    </td>
+                    <td>
+                        {{list.role.roleName}}
+                    </td>
+                    <td>
+                        {{list.projectTeamStatusId==true?'ACTIVE':'INACTIVE'}}
+                    </td>
+
+                    <td style="width: 150px;">
+                        <button type="button" class="btn btn-primary" style="width: 49%;" (click)="disableUserForProject(list.projectTeamMember._id)" >{{list.projectTeamStatusId==true?'Revoke':'Reassign'}}</button>
+                        <button type="button" class="btn btn-danger" style="width: 49%;"  (click)="assingTask(list.projectTeamMember)" >Assign Task</button> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>
+

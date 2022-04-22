@@ -1,0 +1,62 @@
+<div class="card-header">
+    <strong>User Report</strong>
+</div>
+<div class="card-body card-block">
+    <div class="row form-group">
+        
+        <div class="col-12 col-md-9">
+
+
+            <select name="select" id="select" class="form-control"  (change)="userReport($event)">
+                <option value="0" *ngFor="let r of role" value="{{r._id}}">{{r.roleName}}</option>
+
+
+            </select>
+        </div>
+    </div>
+    
+</div>   
+<!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+ 
+     <div class="table-responsive table-responsive-data2 ">
+        <table class="table table-data2 size ">
+            <thead>
+                <tr>
+                    
+                    <th >Sr</th>
+                    <th >User Name</th>
+                    <th >Email</th>
+                    <th >Gender</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow" *ngFor="let u of user,let i=index" >
+
+                    <td >
+                       {{i+1}}
+                    </td>
+                    <td>
+                         {{u.userName}}                 
+                    </td>
+                    <td>
+                        {{u.email}}
+                    </td>
+                    <td>
+                        {{u.Gender}}
+                    </td>
+                    <td>
+                        {{u.status}}
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>
+

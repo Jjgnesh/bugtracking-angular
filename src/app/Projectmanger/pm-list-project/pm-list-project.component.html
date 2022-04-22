@@ -1,0 +1,58 @@
+<!-- list -->
+
+<div class="col-md-12">
+    <!-- DATA TABLE -->
+    <h3 class="title-5 m-b-35 card-header">Projects</h3>
+    <div class="table-data__tool">
+
+
+    </div>
+     <div class="table-responsive table-responsive-data2 ">
+        <table class="table table-data2 size ">
+            <thead>
+                <tr>
+                    
+                    <th [width]="100">Project Name</th>
+                    <th [width]="150">project Manager</th>
+                    <th [width]="400">Description</th>
+                    <th>Technology</th>
+                    <th [width]="100">Estimated hour</th>
+                    <th >Start Date</th>
+                    <th>status</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow" *ngFor="let list of listProject " >
+
+                    
+                    <td>
+                       {{list.projectName}}
+                    </td>
+                    <td>
+                        {{list.projectManagerId.userName}}
+                    </td>
+                    <td >
+                        {{list.description}}
+                    </td>
+                    <td>
+                        {{list.technology}}
+                    </td>
+                    <td>
+                        {{list.estimatedHour}}
+                    </td>
+                    <td>
+                        {{list.startDate}}
+                    </td>
+                    <td>
+                        {{list.statusId.statusName}}
+                    </td>
+
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>

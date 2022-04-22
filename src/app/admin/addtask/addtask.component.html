@@ -1,0 +1,86 @@
+<div class="card-header">
+    <strong>Add Task</strong>
+</div>
+<div class="card-body card-block">
+    
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project</label>
+        </div>
+        <div class="col-12 col-md-9">
+
+
+            <select name="select"  id="select" (change)="moduleByProject()"  [(ngModel)]="projectId" class="form-control">
+                <option value="0" *ngFor="let p of project" value="{{p._id}}">{{p.projectName}} </option>
+
+
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Module</label>
+        </div>
+        <div class="col-12 col-md-9">
+
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="moduleId">
+                <option value="0"  *ngFor="let m of module" value="{{m._id}}">{{m.moduleName}} </option>
+
+
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Task Name</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="text" placeholder="Enter Task  Name..."  [(ngModel)]="taskName" class="form-control">
+
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Description</label>
+        </div>
+
+        <div class="col-12 col-md-9">
+            <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Description."
+                class="form-control"  [(ngModel)]="description" ></textarea>
+        </div>
+    </div>
+
+
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Estimated Time</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="text" placeholder="Enter Time In minite..."  [(ngModel)]="estimatedHour"  class="form-control">
+
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">priority</label>
+        </div>
+        <div class="col-12 col-md-9">
+
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="priorityId">
+                <option value="0"  *ngFor="let m of priority" value="{{m._id}}">{{m.priorityName}} </option>
+
+
+            </select>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary btn-sm" (click)="addtask()">
+            <i class="fa fa-dot-circle-o"  ></i> ADD Task
+        </button>
+
+    </div>
+
+</div>

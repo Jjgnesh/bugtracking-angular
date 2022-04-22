@@ -1,0 +1,44 @@
+<div class="card-header">
+    <strong>Assign Modules</strong>
+</div>
+<div class="card-body card-block">
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project Manager</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="text"  class="form-control" [(ngModel)]="user" readonly>
+
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Project </label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="text"  class="form-control" [(ngModel)]="project" readonly>
+
+        </div>
+
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
+            <label class=" form-control-label">Module</label>
+        </div>
+        <div class="col-12 col-md-9">
+
+
+            <select name="select" id="select" class="form-control" [(ngModel)]="moduleId">
+                <option value="0" *ngFor="let m of module" value="{{m._id}}">{{m.moduleName}}</option>
+
+
+            </select>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary btn-sm"  (click)="assignModule()" >
+            <i class="fa fa-dot-circle-o"></i> Submit
+        </button>
+       
+    </div>
+</div>   

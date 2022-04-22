@@ -1,0 +1,15 @@
+.clr{ 
+background-image: -webkit-linear-gradient(90deg, rgb(63, 94, 251) 0%, rgb(252, 70, 107) 100%);
+}
+
+.clr2{
+    background-image: -webkit-linear-gradient(90deg, #11998e 0%, #38ef7d 100%)
+}
+
+.clr3{
+    background-image: -webkit-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.clr4{
+    background-image: -webkit-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
+}
